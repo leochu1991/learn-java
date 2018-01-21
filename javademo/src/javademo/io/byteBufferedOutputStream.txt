@@ -1,0 +1,5 @@
+这是字节流读取输入文件：
+this is byte input stream test!
+nice move
+ok http
+absolute path
