@@ -1,59 +1,52 @@
 package demo1;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+
 /**
- * 功能：Thread的interrupt(),interrupted(),isInterrupted()方法区别
- * 调用interrupt()方法会set(重置)interrupt status为true，threadA在catch到InterruptedException后会clear(清除)interrupt status为false
- * Thread.interrupted()类方法，会clear(清除)interrupt status为false
- * 调用interrupted()方法只判断interrupt status，不改变状态
- * <p>
- * synchronized,Lock.lock(),inputSteam.read()等不能响应中断，得不到资源就会阻塞
+ * 功能：将子线程计算的结果返回给主线程，使用callable,futuretask
+ * callable和runnable区别：callable返回泛型结果V，抛出异常
+ * futuretask的get方法会阻塞主线程，如果不希望阻塞主线程，可以考虑利用 ExecutorService，把 FutureTask 放到线程池去管理执行。
  */
-public class Demo9 {
+public class Demo81 {
     public static void main(String[] args) {
-        Thread threadA = new Thread(new Runnable() {
+        // 创建callable
+        Callable<Boolean> callable = new Callable<Boolean>() {
             @Override
-            public void run() {
-                try {
-                    // 休眠20s，让Main Thread调用threadA.interrupt()
-                    System.out.println("In threadA, call Thread.sleep()。。。：休眠20s");
-                    Thread.sleep(20000);
-                    // 不会执行
-                    System.out.println("In threadA, After calling Thread.sleep()。。。");
-                } catch (InterruptedException e) {
-                    // threadA catch InterruptedException后将threadA's interrupt status清除，为false
-                    System.out.println(String.format("In threadA's InterruptedException。。。" +
-                            "after calling threadA.interrupt(),threadA's interrupt status is %b", Thread.currentThread().isInterrupted()));
-                    // 将threadA's interrupt status重置为true
-                    Thread.currentThread().interrupt();
-                    System.out.println(String.format("========== call threadA.interrupt() second time," +
-                            "threadA's interrupt status is %b", Thread.currentThread().isInterrupted()));
-                    // 清除threadA's interrupt status，为false
-                    Thread.interrupted();
-                    System.out.println(String.format("========== call Thread.interrupted() first time," +
-                            "threadA's interrupt status is %b", Thread.currentThread().isInterrupted()));
-                    // 不起作用，仍为false
-                    Thread.interrupted();
-                    System.out.println(String.format("========== call Thread.interrupted() second time," +
-                            "threadA's interrupt status is %b", Thread.currentThread().isInterrupted()));
-                    return;
+            public Boolean call() throws Exception {
+                Thread.sleep(1000);
+                System.out.println("开始执行futuretask。。。");
+                Boolean result = false;
+                int sum = 0;
+                for (int i = 0; i <= 100; i++) {
+                    sum += i;
                 }
-                System.out.println("threadA finished normally。。。");
+                if (sum == 5050) {
+                    result = true;
+                }
+                System.out.println("futuretask执行完成。。。");
+                return result;
             }
-        });
-        threadA.start();
-        // main线程休眠2s，让出cpu
-        try {
-            System.out.println("In Main Thread, call Thread.sleep()。。。：休眠2s，让threadA执行。。。");
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            System.out.println("In Main's InterruptedException。。。");
+        };
+        int count = 0;
+        for (int i = 0; i < 20; i++) {
+            // 创建futuretask
+            FutureTask<Boolean> futureTask = new FutureTask<>(callable);
+            new Thread(futureTask).start();
+            try {
+                // System.out.println("开始调用futuretask.get()方法。。。");
+                Boolean result = futureTask.get();
+                // System.out.println("1+2+3...+100 = 5050 ??? " + result);
+                if (result) {
+                    count++;
+                }
+                System.out.println("第" + i + "次任务时 result = " + result + ",count = " + count);
+                // System.out.println("调用futuretask.get()方法结束。。。");
+            } catch (InterruptedException | ExecutionException e) {
+                throw new RuntimeException(e);
+            }
         }
-        // 调用threadA.interrupt()方法前，threadA的interrupt status为false
-        System.out.println(String.format("In Main Thread, call threadA.interrupt()。。。" +
-                "before calling threadA.interrupt(),threadA's interrupt status is %b", threadA.isInterrupted()));
-        threadA.interrupt();
-        // 调用threadA.interrupt()方法后，则显示threadA的interrupt status为true
-        System.out.println(String.format("Main Thread finished normally。。。" +
-                "after calling threadA.interrupt(),before threadA catch InterruptedException,threadA's interrupt status is %b", threadA.isInterrupted()));
+        System.out.println("count = " + count);
     }
 }
