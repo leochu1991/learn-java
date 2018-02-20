@@ -1,7 +1,11 @@
 package structural_patterns.proxy_pattern.dynamicproxydemo.src;
 
 /**
- * Created by leochu on 2018/2/5.
+ * 用户service接口，目标接口
  */
 public interface UserService {
+    /**
+     * 添加方法
+     */
+    void add();
 }

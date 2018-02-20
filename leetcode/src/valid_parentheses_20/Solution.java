@@ -1,10 +1,12 @@
-package Valid_Parentheses;
+package valid_parentheses_20;
 
 import java.util.Stack;
 
-//20. Valid Parentheses
-//参考https://discuss.leetcode.com/topic/58178/1-ms-java-sol-using-stack/2
-//和https://discuss.leetcode.com/topic/64334/java-solution-beats-98
+/**
+ * 20. Valid Parentheses
+ * 参考https://discuss.leetcode.com/topic/58178/1-ms-java-sol-using-stack/2
+ * 和https://discuss.leetcode.com/topic/64334/java-solution-beats-98
+ */
 public class Solution {
     public boolean isValid(String s) {
         //定义栈，若s.charAt(i)为'('，'['，'{'，则入栈

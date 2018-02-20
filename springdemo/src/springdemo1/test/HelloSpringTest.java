@@ -8,11 +8,12 @@ import springdemo1.bean.HelloSpring1;
 import springdemo1.bean.HelloSpring2;
 
 /**
- * Created by leochu on 2017/9/28.
+ * 获取bean的实例
  */
 public class HelloSpringTest {
     @Test
     public void testSayHello(){
+        // configLocation默认classpath，可以写作classpath:/springdemo1/...;classpath:springdemo1/...;springdemo1/resources/...
         ApplicationContext atx = new ClassPathXmlApplicationContext("/springdemo1/resources/spring-config.xml");
         HelloSpring helloSpring = (HelloSpring) atx.getBean("HelloSpring");
         System.out.println(helloSpring.sayHello());

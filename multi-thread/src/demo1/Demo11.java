@@ -8,7 +8,7 @@ package demo1;
  * <p>
  * synchronized,Lock.lock(),inputSteam.read()等不能响应中断，得不到资源就会阻塞
  */
-public class Demo9 {
+public class Demo11 {
     public static void main(String[] args) {
         Thread threadA = new Thread(new Runnable() {
             @Override

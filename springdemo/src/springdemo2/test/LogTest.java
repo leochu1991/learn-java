@@ -6,8 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springdemo2.bean.Person;
 
 /**
- * 日志测试类
- * Created by leochu on 2018/1/30.
+ * 自定义注解实现日志打印
  */
 public class LogTest {
 

@@ -5,11 +5,10 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 /**
- * 功能：将子线程计算的结果返回给主线程，使用callable,futuretask
+ * 功能：将多个子线程计算的结果是否等于预期值返回给主线程，表明有多少个任务执行成功
  * callable和runnable区别：callable返回泛型结果V，抛出异常
- * futuretask的get方法会阻塞主线程，如果不希望阻塞主线程，可以考虑利用 ExecutorService，把 FutureTask 放到线程池去管理执行。
  */
-public class Demo81 {
+public class Demo9 {
     public static void main(String[] args) {
         // 创建callable
         Callable<Boolean> callable = new Callable<Boolean>() {
@@ -41,12 +40,12 @@ public class Demo81 {
                 if (result) {
                     count++;
                 }
-                System.out.println("第" + i + "次任务时 result = " + result + ",count = " + count);
+                System.out.println("第" + (i + 1) + "次任务时 result = " + result + ",count = " + count);
                 // System.out.println("调用futuretask.get()方法结束。。。");
             } catch (InterruptedException | ExecutionException e) {
                 throw new RuntimeException(e);
             }
         }
-        System.out.println("count = " + count);
+        System.out.println("任务结束后count = " + count);
     }
 }

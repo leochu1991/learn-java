@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
  */
 public class ReflectiveTest {
     @Test
-    public void test1() {
+    public void test() {
         try {
             // 根据全类名获得类
             Class<?> clazz = Class.forName("structural_patterns.proxy_pattern.reflectivedemo.src.Student");

@@ -1,6 +1,8 @@
-package Search_Insert_Position;
+package search_insert_position_35;
 
-//35. Search Insert Position
+/**
+ * 35. Search Insert Position
+ */
 public class Solution {
     public int searchInsert(int[] nums, int target) {
         int low = 0;

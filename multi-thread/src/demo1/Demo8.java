@@ -31,10 +31,8 @@ public class Demo8 {
             Integer result = futureTask.get();
             System.out.println("1+2+3...+100 = " + result);
             System.out.println("调用futuretask.get()方法结束。。。");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
         }
     }
 }

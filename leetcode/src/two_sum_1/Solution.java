@@ -1,37 +1,27 @@
-package search_insert_position_35;
+package two_sum_1;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * 35. Search Insert Position
+ * 1.Two Sum
+ * Time complexity : O(n)
+ * Space complexity : O(n)
  */
-public class Solution {
-    public int searchInsert(int[] nums, int target) {
-        int low = 0;
-        int high = nums.length - 1;
-        int mid, index = -1;
-        while (low <= high) {
-            if (high == low) {
-                if (nums[low] == target) {//nums[low]=target，查找到目标，返回low
-                    index = low;
-                    break;
-                } else if (nums[low] < target) {//nums[low]<target，插入位置为low+1
-                    index = low + 1;
-                    break;
-                } else {//nums[low]>target，插入位置为low
-                    index = low;
-                    break;
-                }
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        // 将<nums[i],i>存入map
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int minus = target - nums[i];
+            // nums[i]不在map中，与minus下标不一致
+            if (map.containsKey(minus)) {
+                // map中存在minus与nums[i]的和等于target，返回下标
+                return new int[]{map.get(minus), i};
             }
-            //二分查找，通过中间位置mid判断
-            mid = (high + low) / 2;
-            if (nums[mid] == target) {//nums[mid]=target，返回mid
-                index = mid;
-                break;
-            } else if (nums[mid] < target) {//nums[mid]<target，target在[mid+1,high]中
-                low = mid + 1;
-            } else {//nums[mid]>target，target在[low,mid]中
-                high = mid;
-            }
+            // 否则将<nums[i],i>存入map
+            map.put(nums[i], i);
         }
-        return index;
+        return new int[2];
     }
 }
