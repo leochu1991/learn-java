@@ -1,0 +1,4 @@
+字符流读取输入文件：\G
+this is char buffered reader test.\G
+new line!\G
+another line!\G

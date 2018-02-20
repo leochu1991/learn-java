@@ -1,0 +1,4 @@
+字符流读取输入文件：
+this is char buffered reader test.
+new line!
+another line!
