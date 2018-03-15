@@ -7,18 +7,18 @@ import java.util.*;
 // 时间复杂度：O(N*N)
 public class BubbleSort {
     public static void bubbleSort(int[] arr) {
-        //从arr[length-1]开始，每次将最大的数交换到最后
-        for (int i = arr.length - 1; i > 0; i--) {
-            //j从0到i-1，比较交换arr[j]和arr[j+1]
-            for (int j = 0; j < i; j++) {
-                //arr[j]>arr[j+1]，交换
+        // 从arr[0],arr[1],...arr[i]到arr[arr.length-2]共arr.length-1个元素需要比较，每个元素比较的次数为 (arr.length - 1 - i)，每次将最大的数交换到最后
+        for (int i = 0; i < arr.length - 1; i++) {
+            // j从0到i-1，比较交换arr[j]和arr[j+1]
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                // arr[j]>arr[j+1]，交换
                 if (arr[j] > arr[j + 1]) {
                     int tmp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = tmp;
                 }
             }
-            //输出每趟排序后的数组
+            // 输出每趟排序后的数组
             System.out.println(Arrays.toString(arr));
         }
     }
