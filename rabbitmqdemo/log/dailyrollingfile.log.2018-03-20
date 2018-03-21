@@ -1,0 +1,4 @@
+[2018-03-20 00:01:51,733][demo1.test.Demo1Test][WARN]======do not create bean with new, use Spring ApplicationContext, or you won't get amqpTemplate======
+[2018-03-20 00:08:50,899][demo1.test.Demo1Test][WARN]======do not create bean with new, use Spring ApplicationContext, or you won't get amqpTemplate======
+[2018-03-20 21:28:18,965][demo1.test.Demo1Test][WARN]======do not create bean with new, use Spring ApplicationContext, or you won't get amqpTemplate======
+[2018-03-20 23:46:08,147][demo1.test.Demo1Test][WARN]======do not create bean with new, use Spring ApplicationContext, or you won't get amqpTemplate======
