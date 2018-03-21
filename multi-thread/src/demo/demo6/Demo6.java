@@ -29,9 +29,7 @@ public class Demo6 {
                     try {
                         System.out.println("线程" + Thread.currentThread().getName() + "已经准备好了，等待其它线程");
                         cyclicBarrier.await();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    } catch (BrokenBarrierException e) {
+                    } catch (InterruptedException | BrokenBarrierException e) {
                         e.printStackTrace();
                     }
                     System.out.println("线程" + Thread.currentThread().getName() + "开始执行！！！");
