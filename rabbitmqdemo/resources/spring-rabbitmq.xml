@@ -12,10 +12,10 @@
 
     <!--queue-->
     <rabbit:queue id="demo1MessageQueue" durable="true" auto-delete="false" exclusive="false"
-                  colorName="demo1MessageQueue" declared-by="rabbitAdmin"/>
+                  name="demo1MessageQueue" declared-by="rabbitAdmin"/>
 
     <!--exchange-queue-binging-->
-    <rabbit:direct-exchange id="demo1Exchange" colorName="demo1Exchange" durable="true" auto-delete="false"
+    <rabbit:direct-exchange id="demo1Exchange" name="demo1Exchange" durable="true" auto-delete="false"
                             declared-by="rabbitAdmin">
         <rabbit:bindings>
             <rabbit:binding queue="demo1MessageQueue" key="demo1MessageQueueKey"/>
