@@ -1,4 +1,4 @@
-package structural_patterns.proxy_pattern.dynamicproxydemo.src;
+package structural_patterns.proxy_pattern.dynamicproxydemo;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

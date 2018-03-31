@@ -1,9 +1,6 @@
-package structural_patterns.proxy_pattern.dynamicproxydemo.test;
+package structural_patterns.proxy_pattern.dynamicproxydemo;
 
 import org.junit.Test;
-import structural_patterns.proxy_pattern.dynamicproxydemo.src.MyInvocationHandler;
-import structural_patterns.proxy_pattern.dynamicproxydemo.src.UserService;
-import structural_patterns.proxy_pattern.dynamicproxydemo.src.UserServiceImpl;
 
 /**
  * 动态代理测试类，运行期反射生成代理类；只针对实现了接口的类进行代理

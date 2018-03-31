@@ -1,8 +1,7 @@
-package structural_patterns.proxy_pattern.staticproxydemo.src;
+package structural_patterns.proxy_pattern.staticproxydemo;
 
 /**
  * 真实对象
- * Created by leochu on 2017/10/19.
  */
 public class RealSubject implements Subject {
     @Override

@@ -1,8 +1,6 @@
-package structural_patterns.proxy_pattern.cglibproxydemo.test;
+package structural_patterns.proxy_pattern.cglibproxydemo;
 
 import org.junit.Test;
-import structural_patterns.proxy_pattern.cglibproxydemo.src.BookServiceImpl;
-import structural_patterns.proxy_pattern.cglibproxydemo.src.BookServiceImplCglib;
 
 /**
  * cglib测试类，针对没有实现接口的类，通过生成目标类的子类，实现方法增强，

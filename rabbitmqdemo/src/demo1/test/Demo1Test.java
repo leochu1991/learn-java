@@ -23,7 +23,7 @@ public class Demo1Test {
     }
 
     @Test
-    public void test1() {
+    public void test() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("exchange", "demo1Exchange");
         jsonObject.put("routingKey", "demo1MessageQueueKey");

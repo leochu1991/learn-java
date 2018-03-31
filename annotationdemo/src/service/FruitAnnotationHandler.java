@@ -7,7 +7,6 @@ import java.lang.reflect.Method;
 
 /**
  * 水果注解处理器
- * Created by leochu on 2018/1/15.
  */
 public class FruitAnnotationHandler {
     public static <T> void handle(Class<T> clazz) {

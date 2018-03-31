@@ -3,11 +3,11 @@ import org.junit.Test;
 import service.FruitAnnotationHandler;
 
 /**
- * Created by leochu on 2018/1/16.
+ * 注解测试类
  */
 public class FruitAnnotationTest {
     @Test
-    public void test1(){
+    public void test() {
         FruitAnnotationHandler.handle(Apple.class);
     }
 }

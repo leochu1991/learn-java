@@ -1,8 +1,6 @@
-package structural_patterns.proxy_pattern.staticproxydemo.test;
+package structural_patterns.proxy_pattern.staticproxydemo;
 
 import org.junit.Test;
-import structural_patterns.proxy_pattern.staticproxydemo.src.ProxySubject;
-import structural_patterns.proxy_pattern.staticproxydemo.src.RealSubject;
 
 /**
  * 静态代理测试类，代理类的字节码文件在编译期生成
