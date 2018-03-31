@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * chain of responsibility pattern
+ * chain of responsibility pattern test
  * 多个处理对象都有可能处理请求，对象保存下一个对象的引用，对象之间形成一条链
  */
 public class ChainResponsibilityTest {

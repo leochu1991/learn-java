@@ -1,4 +1,4 @@
-package structural_patterns.proxy_pattern.dynamicproxydemo.src;
+package structural_patterns.proxy_pattern.dynamicproxydemo;
 
 /**
  * 用户service实现类，目标实现类

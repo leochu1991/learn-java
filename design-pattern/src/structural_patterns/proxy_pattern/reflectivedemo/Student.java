@@ -1,4 +1,4 @@
-package structural_patterns.proxy_pattern.reflectivedemo.src;
+package structural_patterns.proxy_pattern.reflectivedemo;
 
 /**
  * 学生类，测试Java反射

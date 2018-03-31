@@ -1,8 +1,7 @@
-package structural_patterns.proxy_pattern.staticproxydemo.src;
+package structural_patterns.proxy_pattern.staticproxydemo;
 
 /**
  * 代理对象
- * Created by leochu on 2017/10/19.
  */
 public class ProxySubject implements Subject {
     //委托对象

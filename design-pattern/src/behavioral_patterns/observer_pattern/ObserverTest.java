@@ -8,23 +8,23 @@ import org.junit.Test;
 public class ObserverTest {
     @Test
     public void test() {
-        Subject subjectA = new SubjectA();
-        Observer observerA = new ObserverA(subjectA, "observerA");
-        Observer observerB = new ObserverB(subjectA, "observerB");
-        Observer observerC = new ObserverC(subjectA, "observerC");
+        Subject concreteSubject = new ConcreteSubject();
+        Observer observerA = new ObserverA(concreteSubject, "observerA");
+        Observer observerB = new ObserverB(concreteSubject, "observerB");
+        Observer observerC = new ObserverC(concreteSubject, "observerC");
 
-        subjectA.attach(observerA);
-        subjectA.attach(observerB);
-        subjectA.attach(observerC);
+        concreteSubject.attach(observerA);
+        concreteSubject.attach(observerB);
+        concreteSubject.attach(observerC);
 
         System.out.println("第一次线程状态是: 新建");
-        subjectA.setState(StateEnum.NEW.getDesc());
+        concreteSubject.setState(StateEnum.NEW.getDesc());
 
         System.out.println("第二次更新线程状态: 可运行");
-        subjectA.setState(StateEnum.RUNNABLE.getDesc());
+        concreteSubject.setState(StateEnum.RUNNABLE.getDesc());
 
         System.out.println("第三次移除observerA后线程状态是: 阻塞");
-        subjectA.detach(observerA);
-        subjectA.setState(StateEnum.BLOCKED.getDesc());
+        concreteSubject.detach(observerA);
+        concreteSubject.setState(StateEnum.BLOCKED.getDesc());
     }
 }

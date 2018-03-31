@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 主题A
+ * 具体主题
  */
-public class SubjectA implements Subject {
+public class ConcreteSubject implements Subject {
     private List<Observer> observers = new LinkedList<Observer>();
     private String state;
 

@@ -1,7 +1,7 @@
 package creational_patterns.factory_pattern.factory_method;
 
 /**
- * Created by leochu on 2017/12/25.
+ * 具体产品
  */
 public class BenzCar implements Car {
     private String carName;

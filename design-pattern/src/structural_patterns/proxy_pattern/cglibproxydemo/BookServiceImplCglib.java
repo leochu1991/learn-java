@@ -1,4 +1,4 @@
-package structural_patterns.proxy_pattern.cglibproxydemo.src;
+package structural_patterns.proxy_pattern.cglibproxydemo;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;

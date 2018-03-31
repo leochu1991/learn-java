@@ -1,4 +1,4 @@
-package structural_patterns.proxy_pattern.cglibproxydemo.src;
+package structural_patterns.proxy_pattern.cglibproxydemo;
 
 /**
  * 图书类service，没有实现接口

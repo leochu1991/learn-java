@@ -1,4 +1,4 @@
-package structural_patterns.proxy_pattern.reflectivedemo.test;
+package structural_patterns.proxy_pattern.reflectivedemo;
 
 import org.junit.Test;
 
@@ -8,14 +8,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * 测试反射类
+ * 反射测试类
  */
 public class ReflectiveTest {
     @Test
     public void test() {
         try {
             // 根据全类名获得类
-            Class<?> clazz = Class.forName("structural_patterns.proxy_pattern.reflectivedemo.src.Student");
+            Class<?> clazz = Class.forName("structural_patterns.proxy_pattern.reflectivedemo.Student");
             System.out.println(String.format("类名：%s", clazz.toString()));
 
             // 获取所有构造方法

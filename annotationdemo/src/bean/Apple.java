@@ -1,7 +1,7 @@
 package bean;
 
 /**
- * Created by leochu on 2018/1/16.
+ * 水果类，含注解
  */
 public class Apple {
     @Fruit(fruitName = "apple pie")
@@ -12,6 +12,7 @@ public class Apple {
     public String getName() {
         return name;
     }
+
     @Fruit(fruitName = "Banana")
     public void setName(String name) {
         this.name = name;
@@ -20,6 +21,7 @@ public class Apple {
     public String getLocality() {
         return locality;
     }
+
     @Fruit(fruitLocality = "Shang Dong")
     public void setLocality(String locality) {
         this.locality = locality;

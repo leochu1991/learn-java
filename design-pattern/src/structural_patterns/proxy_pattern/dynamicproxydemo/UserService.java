@@ -1,4 +1,4 @@
-package structural_patterns.proxy_pattern.dynamicproxydemo.src;
+package structural_patterns.proxy_pattern.dynamicproxydemo;
 
 /**
  * 用户service接口，目标接口

@@ -1,11 +1,14 @@
 package creational_patterns.factory_pattern.abstract_factory;
 
+import org.junit.Test;
+
 /**
- * 抽象工厂测试类
+ * abstract factory pattern test
+ * 抽象工厂包含所有产品，工厂方法只有一种
  */
 public class CarAbstractFactory {
-
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         AbstractFactory abstractFactory = new BMWFactory();
         Car car = abstractFactory.getCar("bmw");
         car.drive();

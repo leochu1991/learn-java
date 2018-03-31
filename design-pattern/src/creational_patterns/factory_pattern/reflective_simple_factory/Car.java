@@ -1,4 +1,4 @@
-package creational_patterns.factory_pattern.simple_factory;
+package creational_patterns.factory_pattern.reflective_simple_factory;
 
 /**
  * 抽象接口，产生具体产品类
