@@ -2,12 +2,12 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
             targetNamespace="http://localhost/springdemo/springdemo3"
             elementFormDefault="qualified">
-    <element colorName="user">
+    <element name="user">
         <complexType>
-            <attribute colorName="id" type="string"/>
-            <attribute colorName="username" type="string"/>
-            <attribute colorName="sex" type="string"/>
-            <attribute colorName="age" type="int"/>
+            <attribute name="id" type="string"/>
+            <attribute name="username" type="string"/>
+            <attribute name="sex" type="string"/>
+            <attribute name="age" type="int"/>
         </complexType>
     </element>
 </schema>
