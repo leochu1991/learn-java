@@ -12,21 +12,23 @@ import springdemo1.bean.HelloSpring2;
  */
 public class HelloSpringTest {
     @Test
-    public void testSayHello(){
+    public void testSayHello() {
         // configLocation默认classpath，可以写作classpath:/springdemo1/...;classpath:springdemo1/...;springdemo1/resources/...
         ApplicationContext atx = new ClassPathXmlApplicationContext("/springdemo1/resources/spring-config.xml");
         HelloSpring helloSpring = (HelloSpring) atx.getBean("HelloSpring");
         System.out.println(helloSpring.sayHello());
     }
+
     @Test
-    public void testSayHello1(){
+    public void testSayHello1() {
         ApplicationContext atx = new ClassPathXmlApplicationContext("/springdemo1/resources/spring-config1.xml");
         //byType
         HelloSpring1 helloSpring = atx.getBean(HelloSpring1.class);
         System.out.println(helloSpring.sayHello());
     }
+
     @Test
-    public void testSayHello2(){
+    public void testSayHello2() {
         ApplicationContext atx = new ClassPathXmlApplicationContext("/springdemo1/resources/spring-config2.xml");
         //byName需要@Component("helloSpringNew2")指定名称
         HelloSpring2 helloSpring = (HelloSpring2) atx.getBean("helloSpring2");

@@ -3,7 +3,7 @@ package springdemo2.bean;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by leochu on 2018/1/30.
+ * alex对象
  */
 @Component("alex")
 public class Alex implements Person {
