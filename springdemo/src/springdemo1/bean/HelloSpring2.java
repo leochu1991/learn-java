@@ -3,11 +3,11 @@ package springdemo1.bean;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by leochu on 2017/9/28.
+ * hellospring2
  */
 @Component("helloSpring2")
 public class HelloSpring2 {
-    public String sayHello(){
+    public String sayHello() {
         return "Hello,Spring2";
     }
 }
