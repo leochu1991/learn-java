@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 /**
  * 日志切面类
- * Created by leochu on 2018/1/30.
  */
 @Aspect
 @Component

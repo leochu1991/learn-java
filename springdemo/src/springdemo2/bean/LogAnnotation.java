@@ -3,7 +3,7 @@ package springdemo2.bean;
 import java.lang.annotation.*;
 
 /**
- * Created by leochu on 2018/1/30.
+ * 自定义日志注解
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

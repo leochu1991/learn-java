@@ -1,24 +1,24 @@
 package reverse_list;
 
+import java.util.Scanner;
+
 /**
  * 链表反转，递归，非递归
  */
 
-import java.util.Scanner;
-
 /**
  * 定义Node
  */
-class Node {
-    // 结点值
-    int value;
-    // 下一结点
-    Node next = null;
-
-    Node(int value) {
-        this.value = value;
-    }
-}
+// class Node {
+//     // 结点值
+//     int value;
+//     // 下一结点
+//     Node next = null;
+//
+//     Node(int value) {
+//         this.value = value;
+//     }
+// }
 
 public class ReverseList {
     // 递归
