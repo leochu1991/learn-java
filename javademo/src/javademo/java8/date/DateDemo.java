@@ -64,5 +64,13 @@ public class DateDemo {
         LocalDate dayAfterTomorrow = nowDate.plusDays(2);
         String dayAfterTomorrowStr = dayAfterTomorrow.format(pattern);
         System.out.println("day after tomorrow => " + dayAfterTomorrowStr);
+        Instant plusInstant = instant.plus(Duration.ofDays(4)).plus(Duration.ofHours(4)).plus(Duration.ofMinutes(20));
+        System.out.println("plus instant => " + plusInstant);
+        // date加7天
+        date = new Date();
+        Instant instant1 = date.toInstant();
+        Instant plus = instant1.plus(7, ChronoUnit.DAYS);
+        LocalDate localDate1 = plus.atZone(ZoneId.systemDefault()).toLocalDate();
+        System.out.println("now plus 7 days is localdate1:" + localDate1.toString());
     }
 }
